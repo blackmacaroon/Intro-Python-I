@@ -25,7 +25,7 @@ from datetime import datetime
 
 #datetime.now() returns current local time and date
 
-def cal(*args):
+def cal(a_month, a_year):
     try:
         #get sys.argv length
         args = len(sys.argv)
@@ -35,13 +35,16 @@ def cal(*args):
         year = datetime.now().year
 
         if args == 1:
-            print()
+            print(calendar.month(int(month), int(year)))
         if args == 2:
+            print(calendar.month(int(month), int(year)))
         if args == 3:
+            print()
     except:
         print("usage expected: calendar.py [month] [year]")
 
 cal()
+
 
 
 '''print(calendar.weekheader(3))

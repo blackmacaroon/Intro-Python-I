@@ -13,6 +13,11 @@ f = open('foo.txt', 'r')
 print(f.read())
 ''' 'Do you bite your thumb at us, sir?\nI do bite my thumb, sir.\nDo you bite your thumb at us, sir?\nNo, sir. I do not bite my thumb at you, sir, but I bite my thumb, sir.\nDo you quarrel, sir?\nQuarrel, sir? No, sir.' '''
 f.close()
+#or
+with open('foo.txt', 'r') as file:
+    read = file.read()
+    print(read)
+file.close()
 # Open up a file called "bar.txt" (which doesn't exist yet) for
 # writing. Write three lines of arbitrary content to that file,
 # then close the file. Open up "bar.txt" and inspect it to make 
