@@ -23,7 +23,7 @@ print(f2(7, 9, 1, 3, 4, 9, 0))  # Should print 33
 
 a = [7, 6, 5, 4]
 
-# What thing do you have to add to make this work?
+# What thing do you have to add to make this work?  *
 print(f2(*a))    # Should print 22
 
 # Write a function f3 that accepts either one or two arguments. If one argument,
@@ -31,9 +31,12 @@ print(f2(*a))    # Should print 22
 # arguments. Google "python default arguments" for a hint.
 
 # YOUR CODE HERE
+def f3(arg1, arg2=1):
+    return(arg1 + arg2)
 
 print(f3(1, 2))  # Should print 3
 print(f3(8))     # Should print 9
+print(f3(0, 8))  #Should print 8
 
 
 # Write a function f4 that accepts an arbitrary number of keyword arguments and
