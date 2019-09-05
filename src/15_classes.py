@@ -6,7 +6,13 @@ class LatLon:
     def __init__(self, lat, lon):
         self.lat = lat
         self.lon = lon
+    def __str__(self):
+        return f'latitude: {self.lat}, longitude: {self.lon}'
+    def __repr__(self):
+        return f'(latitude: {repr(self.lat)}, longitude: {repr(self.lon)})'
         
+latlon = LatLon(12,-87)
+print(latlon)
 # Make a class Waypoint that can be passed parameters `name`, `lat`, and `lon` to the
 # constructor. It should inherit from LatLon. Look up the `super` method.
 
@@ -15,16 +21,24 @@ class Waypoint(LatLon):
     def __init__(self, name, lat, lon):
         self.name = name
         super().__init__(lat, lon)
+    def __str__(self):
+        return f'"{self.name}" - latitude: {self.lat}, longitude: {self.lon}'
+    def __repr__(self):
+        return f'("{repr(self.name)}" - latitude: {repr(self.lat)}, longitude: {repr(self.lon)})'
 
 # Make a class Geocache that can be passed parameters `name`, `difficulty`,
 # `size`, `lat`, and `lon` to the constructor. What should it inherit from?
 
 # YOUR CODE HERE
 class Geocache(Waypoint):
-    def __init__(self, name, difficulty, size, lat, lon):
-        self.difficulty = difficulty
+    def __init__(self, name, diff, size, lat, lon):
+        self.diff = diff
         self.size = size
         super().__init__(name, lat, lon)
+    def __str__(self):
+        return f'"{self.name}" - size: {self.size}\ndifficulty: {self.diff}\nlatitude: {self.lat}\nlongitude: {self.lon}'
+    def __repr__(self):
+        return f'("{repr(self.name)}" - size: {repr(self.size)}\ndifficulty: {repr(self.diff)}\nlatitude: {repr(self.lat)}\nlongitude: {repr(self.lon)})'
 
 # Make a new waypoint and print it out: "Catacombs", 41.70505, -121.51521
 
@@ -38,6 +52,6 @@ print(waypoint)
 # Make a new geocache "Newberry Views", diff 1.5, size 2, 44.052137, -121.41556
 
 # YOUR CODE HERE
-geocache = Geocache("Newberry Views", diff 1.5, size 2, 44.052137, -121.41556)
+geocache = Geocache("Newberry Views", 1.5, 2, 44.052137, -121.41556)
 # Print it--also make this print more nicely
 print(geocache)
