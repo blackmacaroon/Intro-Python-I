@@ -25,26 +25,31 @@ from datetime import datetime
 
 #datetime.now() returns current local time and date
 
-def cal(a_month, a_year):
+def cal():
     try:
         #get sys.argv length
         args = len(sys.argv)
-        #get current month
-        month = datetime.now().month
         #get current year
         year = datetime.now().year
-
+        #get current month
+        month = datetime.now().month
+        #remember sys.argv[0] is the name of the script (aka this filename) so automatically has 1 arg, user inputs nothing, prints todays month and year
         if args == 1:
-            print(calendar.month(int(month), int(year)))
+            month = int(month)
+            year = int(year)
         if args == 2:
-            print(calendar.month(int(month), int(year)))
+            # month = input("Month: ")
+            month = int(sys.argv[1])
+            year = int(year)
         if args == 3:
-            print()
+           #looks like "python 14_cal.py 7 2020" in the terminal and shows me July 2020
+            month = int(sys.argv[1])
+            year = int(sys.argv[2])
+        print(calendar.month(year, month))
     except:
-        print("usage expected: calendar.py [month] [year]")
-
+        print("nope")
+       
 cal()
-
 
 
 '''print(calendar.weekheader(3))
